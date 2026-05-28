@@ -1,0 +1,108 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--tg-theme-bg-color, #1a1a2e);
+  color: var(--tg-theme-text-color, #eee);
+}
+main { padding: 1rem 1.25rem 2rem; max-width: 420px; margin: 0 auto; }
+h1 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+.hint { opacity: 0.75; font-size: 0.9rem; margin-bottom: 1.5rem; }
+label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+input[type="range"] { width: 100%; margin-top: 0.5rem; }
+.stepper {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.stepper__btn {
+  height: 40px;
+  padding: 0;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.preview {
+  height: 160px;
+  border-radius: 16px;
+  margin: 1rem 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0,255,255,0.25), transparent 70%);
+  border: 2px solid var(--tg-theme-button-color, #6c5ce7);
+  transition: box-shadow 0.15s ease, border-width 0.15s ease;
+  transform-origin: 50% 50%;
+}
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+button {
+  width: 100%;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: var(--tg-theme-button-color, #6c5ce7);
+  color: var(--tg-theme-button-text-color, #fff);
+  cursor: pointer;
+}
+.secondary {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--tg-theme-text-color, #eee) 30%, transparent);
+  color: var(--tg-theme-text-color, #eee);
+}
+
+.modal { position: fixed; inset: 0; display: none; z-index: 50; }
+.modal.is-open { display: block; }
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+.modal__panel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 520px);
+  max-height: 88vh;
+  background: var(--tg-theme-bg-color, #1a1a2e);
+  color: var(--tg-theme-text-color, #eee);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.modal__title { font-weight: 700; }
+.modal__close {
+  width: 40px;
+  height: 36px;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+}
+.modal__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(88vh - 56px);
+  object-fit: contain;
+  background: rgba(0,0,0,0.15);
+}

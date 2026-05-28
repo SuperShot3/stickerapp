@@ -1,0 +1,12 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+data/
+*.log
+.bot.lock
+.DS_Store
+.idea/
+.vscode/
