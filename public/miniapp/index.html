@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>StickerNow Editor</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Glow editor</h1>
+    <p class="hint">Adjust glow around your cutout subject, then apply.</p>
+    <label>
+      Size (zoom)
+      <div class="stepper" role="group" aria-label="Size controls">
+        <button type="button" id="zoomOut" class="secondary stepper__btn" aria-label="Zoom out">−</button>
+        <input type="range" id="size" min="50" max="150" value="100" />
+        <button type="button" id="zoomIn" class="secondary stepper__btn" aria-label="Zoom in">+</button>
+      </div>
+      <span id="sizeVal">100</span>%
+    </label>
+    <label>
+      Outline width
+      <input type="range" id="outline" min="0" max="12" value="2" />
+      <span id="outlineVal">2</span>
+    </label>
+    <label>
+      Glow strength
+      <input type="range" id="glow" min="0" max="100" value="55" />
+      <span id="glowVal">55</span>
+    </label>
+    <div class="preview" id="preview" aria-hidden="true"></div>
+    <div class="actions">
+      <button type="button" id="guide" class="secondary">Guide</button>
+      <button type="button" id="apply">Apply to sticker</button>
+    </div>
+  </main>
+
+  <div class="modal" id="guideModal" aria-hidden="true">
+    <div class="modal__backdrop" id="guideBackdrop"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="How it works">
+      <div class="modal__header">
+        <div class="modal__title">How it works</div>
+        <button type="button" class="modal__close" id="guideClose" aria-label="Close">×</button>
+      </div>
+      <img class="modal__img" id="guideImg" alt="StickerNow guide" />
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
+
